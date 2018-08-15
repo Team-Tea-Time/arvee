@@ -1,0 +1,14 @@
+{
+  "name": "arvee",
+  "version": "1.0.0",
+  "description": "Arvale.World Discord bot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord.io": "github:woor/discord.io#gateway_v6"
+  }
+}
