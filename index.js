@@ -43,7 +43,7 @@ var app = express();
 
 app.use(bodyParser.json());
 
-let api = new APIHandler();
+let api = new APIHandler(bot);
 app.post('/news', api.news);
 
 app.listen(6500, () => console.log('API listening on port 6500'));

@@ -1,6 +1,10 @@
 var https = require('https');
 
 class APIHandler {
+  constructor(bot) {
+    this.bot = bot;
+  }
+
   news (req, res) {
     var requiredFields = ['id', 'author', 'category', 'title', 'slug', 'excerpt'];
     var missingFields = [];
