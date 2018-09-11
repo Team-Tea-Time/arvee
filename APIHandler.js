@@ -1,5 +1,3 @@
-var https = require('https');
-
 class APIHandler {
   constructor(bot) {
     this.bot = bot;
