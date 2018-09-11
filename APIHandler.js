@@ -17,13 +17,15 @@ class APIHandler {
       console.error("[app.post /news] Missing required fields:", missingFields);
       return res.status(422).send({ message: "Missing required fields.", fields: missingFields });
     }
+
+    var url = `https://arvale.world/news/${req.body.id}-${req.body.slug}`;
   
     bot.sendMessage({
       to: '479314335831818240', // #announcements
-      message: '',
+      message: url,
       embed: {
         color: 0xdbc19b,
-        url: `https://arvale.world/news/${req.body.id}-${req.body.slug}`,
+        url: url,
         title: req.body.title,
         description: req.body.excerpt,
         footer: { 
