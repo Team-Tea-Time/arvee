@@ -1,5 +1,8 @@
 var Discord = require('discord.io');
+var express = require('express');
+var bodyParser = require('body-parser');
 var CommandHandler = require('./CommandHandler');
+var APIHandler = require('./APIHandler');
 var config = require('./config.json');
 
 var bot = new Discord.Client({
@@ -35,3 +38,12 @@ bot.on('message', function (user, userID, channelID, message, event) {
     }
   }
 });
+
+var app = express();
+
+app.use(bodyParser.json());
+
+let api = new APIHandler();
+app.post('/news', api.news);
+
+app.listen(6500, () => console.log('API listening on port 6500'));
