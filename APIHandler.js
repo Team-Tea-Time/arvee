@@ -20,7 +20,7 @@ class APIHandler {
 
     var url = `https://arvale.world/news/${req.body.id}-${req.body.slug}`;
   
-    bot.sendMessage({
+    this.bot.sendMessage({
       to: '479314335831818240', // #announcements
       message: url,
       embed: {
