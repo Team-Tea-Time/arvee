@@ -3,7 +3,7 @@ class APIHandler {
     this.bot = bot;
   }
 
-  news (req, res) {
+  news = (req, res) => {
     var requiredFields = ['id', 'author', 'category', 'title', 'slug', 'excerpt'];
     var missingFields = [];
   
