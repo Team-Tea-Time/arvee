@@ -1,10 +1,6 @@
-class APIHandler {
-  constructor(bot) {
-    this.bot = bot;
-    this.bot.bind(this);
-    this.news.bind(this);
-  }
+var bot = require('./bot');
 
+class APIHandler {
   news (req, res) {
     var requiredFields = ['id', 'author', 'category', 'title', 'slug', 'excerpt'];
     var missingFields = [];
@@ -22,7 +18,7 @@ class APIHandler {
 
     var url = `https://arvale.world/news/${req.body.id}-${req.body.slug}`;
   
-    this.bot.sendMessage({
+    bot.sendMessage({
       to: '479314335831818240', // #announcements
       message: url,
       embed: {

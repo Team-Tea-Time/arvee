@@ -4,11 +4,7 @@ var bodyParser = require('body-parser');
 var CommandHandler = require('./CommandHandler');
 var APIHandler = require('./APIHandler');
 var config = require('./config.json');
-
-var bot = new Discord.Client({
-  token: config.auth.token,
-  autorun: true
-});
+var bot = require('./bot');
 
 bot.on('ready', function () {
   console.log('Logged in as %s - %s\n', bot.username, bot.id);
@@ -43,7 +39,7 @@ var app = express();
 
 app.use(bodyParser.json());
 
-let api = new APIHandler(bot);
+let api = new APIHandler();
 app.post('/news', api.news);
 
 app.listen(6500, () => console.log('API listening on port 6500'));
