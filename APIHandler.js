@@ -1,9 +1,10 @@
 class APIHandler {
   constructor(bot) {
     this.bot = bot;
+    this.news.bind(this);
   }
 
-  news = (req, res) => {
+  news (req, res) {
     var requiredFields = ['id', 'author', 'category', 'title', 'slug', 'excerpt'];
     var missingFields = [];
   
