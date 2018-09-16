@@ -1,6 +1,7 @@
 class APIHandler {
   constructor(bot) {
     this.bot = bot;
+    this.bot.bind(this);
     this.news.bind(this);
   }
 
