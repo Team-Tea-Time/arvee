@@ -1,4 +1,3 @@
-var Discord = require('discord.io');
 var express = require('express');
 var bodyParser = require('body-parser');
 var CommandHandler = require('./CommandHandler');
